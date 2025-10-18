@@ -21,7 +21,6 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
 
-    // Hardcoded credentials for prototype
     if (email === "admin@meditrack" && password === "password123") {
       // In a real app, you'd set a session/token here
       router.push("/admin");
