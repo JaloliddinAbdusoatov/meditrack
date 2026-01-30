@@ -1,0 +1,23 @@
+[
+  {
+    "id": "admin-1",
+    "email": "admin@meditrack.clinic",
+    "passwordHash": "$2b$10$t2sFP66R8NEkovuEp53eB..4LdRcS5LySd9RYTey7XqDiZ/ftLcx6",
+    "name": "Admin",
+    "role": "admin"
+  },
+  {
+    "id": "user-1769791260294-6s72ltb",
+    "email": "user1@gmail.com",
+    "passwordHash": "$2b$10$HuwmNqk1aYwMgFDOT9pnxu1ReUj4EoAAeGQwYKSUqx7JMgK2.agz6",
+    "name": "USER1",
+    "role": "user"
+  },
+  {
+    "id": "user-1769791416911-sd8hk44",
+    "email": "admin1@gmail.com",
+    "passwordHash": "$2b$10$frJeZQJzFo/.Pmi7PPmnF.dqlXPHXNb0x9ldjdESnr0q.hvjvQOeC",
+    "name": "admin1",
+    "role": "admin"
+  }
+]

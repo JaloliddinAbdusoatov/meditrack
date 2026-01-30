@@ -17,7 +17,11 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
-export function Contact() {
+interface ContactProps {
+  onBookAppointment?: () => void;
+}
+
+export function Contact({ onBookAppointment }: ContactProps) {
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -48,7 +52,13 @@ export function Contact() {
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Get in Touch</CardTitle>
               <CardDescription className="mt-4 text-lg leading-8 text-muted-foreground">
-                Have a question or need to schedule an appointment? Fill out the form below.
+                Have a question or need to schedule an appointment?{" "}
+                {onBookAppointment && (
+                  <button type="button" onClick={onBookAppointment} className="text-primary underline font-medium">
+                    Book an appointment
+                  </button>
+                )}
+                {" "}Or fill out the form below.
               </CardDescription>
             </CardHeader>
             <CardContent>

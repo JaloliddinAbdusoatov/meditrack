@@ -1,13 +1,14 @@
 import type { ClinicInfo } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
+import { HeroCarousel } from "./HeroCarousel";
 
 interface HeroProps {
   clinicInfo: ClinicInfo;
+  onBookAppointment?: () => void;
 }
 
-export function Hero({ clinicInfo }: HeroProps) {
+export function Hero({ clinicInfo, onBookAppointment }: HeroProps) {
   return (
     <section className="relative bg-secondary overflow-hidden">
       <div className="container mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
@@ -20,22 +21,22 @@ export function Hero({ clinicInfo }: HeroProps) {
               {clinicInfo.description}
             </p>
             <div className="mt-10 flex items-center gap-x-6">
-              <Button asChild size="lg">
-                <Link href="#contact">Book Appointment</Link>
-              </Button>
+              {onBookAppointment ? (
+                <Button size="lg" onClick={onBookAppointment}>
+                  Book Appointment
+                </Button>
+              ) : (
+                <Button asChild size="lg">
+                  <Link href="#contact">Book Appointment</Link>
+                </Button>
+              )}
               <Button asChild variant="link" size="lg">
                 <Link href="#services">Our Services &rarr;</Link>
               </Button>
             </div>
           </div>
-          <div className="relative h-80 md:h-full">
-            <Image
-              src="https://placehold.co/600x600.png"
-              alt="Friendly doctor smiling"
-              fill
-              className="object-cover rounded-lg shadow-2xl"
-              data-ai-hint="clinic interior"
-            />
+          <div className="relative w-full flex justify-center">
+            <HeroCarousel />
           </div>
         </div>
       </div>
